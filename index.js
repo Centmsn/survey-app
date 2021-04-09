@@ -1,9 +1,18 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const keys = require("./config/keys");
+// passportConfig does not return anything
+require("./services/passport");
+const authRoutes = require("./routes/auth");
 
 const app = express();
 
-app.get("/", (req, res, next) => {
-  res.send({ message: "Hello there" });
-});
+app.use(authRoutes);
 
-app.listen(process.env.PORT || 5000);
+mongoose.connect(
+  keys.DB_URI,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    app.listen(process.env.PORT || 5000);
+  }
+);
