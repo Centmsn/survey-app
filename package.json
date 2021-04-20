@@ -16,7 +16,7 @@
     "mongoose": "^5.12.3",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
-    "heorku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i --prefix client && npm run build --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i --prefix client && npm run build --prefix client",
     "stripe": "^8.144.0"
   }
 }
