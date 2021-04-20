@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,6 @@
     "mongoose": "^5.12.3",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i --prefix client && npm run build --prefix client",
     "stripe": "^8.144.0"
   }
 }
