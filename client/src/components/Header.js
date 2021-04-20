@@ -23,6 +23,9 @@ const Header = () => {
           <li key={1}>
             <Payments />
           </li>,
+          <li key={3} style={{ margin: "0 1rem" }}>
+            Credits: {isLoggedIn.credits}
+          </li>,
           <li key={2}>
             <a href="/api/logout">Logout</a>
           </li>,
