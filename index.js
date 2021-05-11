@@ -4,12 +4,16 @@ const mongoose = require("mongoose");
 const cookiesSession = require("cookie-session");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+
+require("./models/user");
+require("./models/survey");
+require("./services/passport");
+
 const keys = require("./config/keys");
 const authRoutes = require("./routes/auth");
 const billingRoutes = require("./routes/billing");
+const surveyRoutes = require("./routes/survey");
 // passportConfig does not return anything
-require("./models/user");
-require("./services/passport");
 
 const app = express();
 
@@ -27,6 +31,7 @@ app.use(passport.session());
 
 app.use(authRoutes);
 app.use(billingRoutes);
+app.use(surveyRoutes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

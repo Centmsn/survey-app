@@ -1,6 +1,5 @@
 const { Router } = require("express");
 const keys = require("../config/keys");
-const user = require("../models/user");
 const stripe = require("stripe")(keys.stripeSecretKey);
 const requireLogin = require("../middlewares/requireLogin");
 
