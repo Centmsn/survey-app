@@ -8,6 +8,7 @@ import reduxThunk from "redux-thunk";
 import reducers from "./reducers";
 import App from "./App";
 
+// ! remove
 import axios from "axios";
 window.axios = axios;
 

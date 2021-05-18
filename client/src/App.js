@@ -5,9 +5,8 @@ import { useDispatch } from "react-redux";
 import { fetchUser } from "./actions";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
-
-const DashBoard = () => <h2>DashBoard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import Dashboard from "./components/Dashboard";
+import SurveyNew from "./components/surveys/SurveyNew";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,7 +23,7 @@ const App = () => {
           <Switch>
             <Route component={Landing} path="/" exact />
             <Route component={SurveyNew} path="/surveys/new" />
-            <Route component={DashBoard} path="/surveys" />
+            <Route component={Dashboard} path="/surveys" />
           </Switch>
         </>
       </BrowserRouter>
